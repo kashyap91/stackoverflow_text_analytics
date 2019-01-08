@@ -1,0 +1,8 @@
+#initial query
+
+select sum(Score) AS tot_Score, OwnerUserId from stkex_data group by OwnerUserId order by tot_Score DESC limit 10;
+
+
+#above query returned null users
+select sum(Score) AS tot_Score, OwnerUserId from stkex_data where ownerUserId > 0 and ownerUserId IS NOT NULL group by OwnerUserId order by tot_Score DESC limit 10;
+

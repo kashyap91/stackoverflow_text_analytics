@@ -1,0 +1,12 @@
+#mapreduce execution commands
+#1
+/tmp$ hadoop jar /usr/local/hadoop/share/doc/hadoop/api/org/apache/hadoop/contrib/hadoop-streaming-2.9.0.jar -input /usr/lib/mapreduce/*.csv -output /tmp/mapreduce-output -mapper /usr/lib/mapreduce/mapper1.py -reducer /usr/lib/mapreduce/reducer1.py
+
+#2
+/tmp$ hadoop jar /usr/local/hadoop/share/doc/hadoop/api/org/apache/hadoop/contrib/hadoop-streaming-2.9.0.jar -input /tmp/mapreduce-output/part-00000 -output /tmp/mapreduce-output2 -mapper /usr/lib/mapreduce/mapper2.py -reducer /usr/lib/mapreduce/reducer2.py
+
+#3
+/tmp$ hadoop jar /usr/local/hadoop/share/doc/hadoop/api/org/apache/hadoop/contrib/hadoop-streaming-2.9.0.jar -input /tmp/mapreduce-output2/part-00000 -output /tmp/mapreduce-output3 -mapper /usr/lib/mapreduce/mapper3.py -reducer /usr/lib/mapreduce/reducer3.py
+
+#4
+/tmp$ hadoop jar /usr/local/hadoop/share/doc/hadoop/api/org/apache/hadoop/contrib/hadoop-streaming-2.9.0.jar -input /tmp/mapreduce-output3/part-00000 -output /tmp/mapreduce-output4 -mapper /usr/lib/mapreduce/mapper4.py
