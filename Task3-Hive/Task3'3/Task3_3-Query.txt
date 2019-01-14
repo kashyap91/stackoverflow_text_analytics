@@ -1,3 +1,0 @@
-#to identify distinct users who have used the word Hadoop
-
-select count(distinct owneruserid) from stkex_data where body like '%hadoop%' or title like '%hadoop%' or tags like 'hadoop';
