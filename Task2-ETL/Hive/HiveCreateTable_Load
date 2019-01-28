@@ -1,0 +1,28 @@
+CREATE TABLE IF NOT EXISTS stkex_data 
+(Id int,
+PostTypeId int,
+AcceptedAnswerId int,
+ParentId int,
+CreationDate timestamp,
+DeletionDate timestamp,
+Score int,
+ViewCount int, 
+OwnerUserId int,
+OwnerDisplayName string,
+LastEditorUserId int, 
+LastEditorDisplayName string,
+LastEditDate timestamp,
+LastActivityDate timestamp,
+Title string,
+Tags string,
+AnswerCount int,
+CommentCount int,
+FavoriteCount int,
+ClosedDate timestamp,
+Body sting)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE;
+
+
+LOAD DATA LOCAL INPATH '/usr/lib/hive/QueryResults.csv'OVERWRITE INTO TABLE ca675.stkex_data;
