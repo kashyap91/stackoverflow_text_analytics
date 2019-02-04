@@ -1,0 +1,5 @@
+#with Body
+select Id, Score, ViewCount, Title, Body from stkex_data order by Score DESC limit 10;
+
+#without Body
+select Id, Score, Title from stkex_data order by Score DESC limit 10;
